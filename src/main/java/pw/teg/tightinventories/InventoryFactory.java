@@ -131,6 +131,11 @@ public class InventoryFactory implements Listener {
 
     @EventHandler
     public void tightInventoryClick(InventoryClickEvent e) {
+        if (e.getClickedInventory() == null) {
+            return;
+        }
+
+
         if (e.getView().getTopInventory() == null || !e.getClickedInventory().equals(e.getView().getTopInventory())) {
             return;
         }
